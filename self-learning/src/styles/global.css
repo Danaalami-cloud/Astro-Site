@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("/images/crystal.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* MainLayout */
+/* nav {
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    font-family: Oswald, sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+    padding: 3px;
+    width: 100vw;
+    height: 14vh;
+    background: rgb(255 255 255 / 50%);
+    top: 0;
+  } */
+
+/* Signs Layout */
+.signs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .twelve-signs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 59%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .twelve-signs li {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3.5px solid rgb(164 16 242);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 25px 27px 22px 39px;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 33px;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
