@@ -1,6 +1,6 @@
 ---
 const {title} = Astro.props
-import "../styles/global.css"
+import "../styles/global.css";
 ---
 <html lang="en">
 <head>
@@ -11,35 +11,46 @@ import "../styles/global.css"
     <title>{title}</title>
 </head>
 <body>
-    <nav class="bg-slate-700 mb-10">
-        <div class="container flex flex-wrap items-center justify-between mx-auto">
-            <div class="w-full">
-                <ul class="flex p-4 mt-4 justify-around text-lg">
+    <nav class='bg-neutral-950 mb-10'>
+        <div class='container flex flex-wrap items-center justify-around mx-auto'>
+            <div class='w-full'>
+                <ul class='flex p-4 mt-4 justify-around text-lg'>
                     <li>
-                        <a href="/" class="text-white hover:text-orange-400">Home</a>
+                        <a href="/" class='text-white hover:text-orange-400'>Home</a>
                     </li>
                     <li>
-                        <a href="signs" class="text-white hover:text-orange-400">Signs</a>
+                        <a href="signs" class='text-white hover:text-orange-400'>Signs</a>
                     </li>
                     <li>
-                        <a href="luv" class="text-white hover:text-orange-400">Luuv</a>
+                        <a href="luv" class='text-white hover:text-orange-400'>Luuv</a>
                     </li>
                     <li>
-                        <a href="chart" class="text-white hover:text-orange-400">Your Chart</a>
+                        <a href="chart" class='text-white hover:text-orange-400'>Your Chart</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container flex flex-col mx-auto h-screen"></div>
-    <h1 class="text-4xl mb-10">{title}</h1>
+    <div class='container flex flex-col mx-auto h-screen text-white'>
+    <h1 class='text-white text-4xl mb-10'>{title}</h1>
 <slot />
+</div>
 </body>
-<footer class="p-4 bg-slate-700 flex justify-between">
-    <span class="text-white">
+<footer class='p-4 bg-neutral-950 flex justify-between'>
+    <span class='text-white'>
         © 2023 <a href="https://www.deedeeportfolio.com/" class="hover:underline text-white" target="_blank">Deedee</a>
         .All Rights Reserved.
     </span>
-    <ul class="flex flex-wrap items-center gap-x-5 text-white h-20"></ul>
+    <ul class='flex flex-wrap items-center gap-x-5 text-white h-20'>
+        <li>
+            <a href="#" class='hover:underline'>About</a>
+        </li>
+        <li>
+            <a href="#" class='hover:underline'>Privacy Policy</a>
+        </li>
+        <li>
+            <a href="#" class='hover:underline'>Contact</a>
+        </li>
+    </ul>
 </footer>
 </html>
