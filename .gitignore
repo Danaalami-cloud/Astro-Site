@@ -1,5 +1,7 @@
 # build output
 dist/
+.DS_Store
+
 
 # generated types
 .astro/
