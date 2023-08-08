@@ -1,6 +1,7 @@
 # build output
 dist/
 .DS_Store
+node_modules
 
 
 # generated types
