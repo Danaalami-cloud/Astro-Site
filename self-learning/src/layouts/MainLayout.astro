@@ -1,6 +1,8 @@
 ---
 const {title} = Astro.props
 import "../styles/global.css";
+import Card from "../components/Card.astro";
+import Hero from "../layouts/Hero.astro";
 ---
 <html lang="en">
 <head>
@@ -11,10 +13,10 @@ import "../styles/global.css";
     <title>{title}</title>
 </head>
 <body>
-    <nav class='bg-neutral-950 mb-10'>
+    <nav class='bg-neutral-950 mb-10 relative'>
         <div class='container flex flex-wrap items-center justify-around mx-auto'>
             <div class='w-full'>
-                <ul class='flex p-4 mt-4 justify-around text-lg'>
+                <ul class='flex p-4 mt-4 justify-around text-lg relative'>
                     <li>
                         <a href="/" class='text-white hover:text-orange-400'>Home</a>
                     </li>
@@ -27,14 +29,45 @@ import "../styles/global.css";
                     <li>
                         <a href="chart" class='text-white hover:text-orange-400'>Your Chart</a>
                     </li>
+                    <li class="relative-grup">
+                        <!-- <div class="relative inline-block text-left"> -->
+                        <button type="button" class="bg-neutral-950 text-white" id="menu-button" aria-expanded="true">
+                          Universe Search
+                          <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                          </svg>
+                        </button>
+                        <!-- </div> -->
+                        <ul class="py-1 absolute left-0 top-full hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+                            <form method="POST" action="#" role="none">
+                              <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
+                            </form>
+                        </ul>
+                    </li>
+                     <!-- </div> -->
                 </ul>
             </div>
         </div>
     </nav>
     <div class='container flex flex-col mx-auto h-screen text-white'>
-    <h1 class='text-white text-4xl mb-10'>{title}</h1>
-<slot />
-</div>
+        <h1 class='text-white text-4xl mb-10'>{title}</h1>
+    <slot />
+    </div>
+    <Hero></Hero>
+    
+<Card></Card>
+<script>
+    const menuButton = document.getElementById("menu-button");
+    const dropdown = document.querySelector(".dropdown-menu");
+
+    menuButton.addEventListener("click", () => {
+        dropwdown.classList.toggle("hidden");
+        dropdown.classList.toggle("block");
+    });
+</script>
 </body>
 <footer class='p-4 bg-neutral-950 flex justify-between'>
     <span class='text-white'>

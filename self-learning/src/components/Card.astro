@@ -1,14 +1,114 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
+const { href, title, image } = Astro.props;
 
-const { href, title, body } = Astro.props;
+// interface Props {
+// 	title: string;
+// 	image: string;
+// 	href: string;
+// }
 ---
+<div class="cards-container flex justify-between">
+<div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <!-- <div class="card-header"> -->
+      <h1>{title}</h1>
+      <a>{href}</a>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        I don't chase, I attract. What belongs to me will simply find me.
+      </p>
+      <a
+        {href}
+        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-stone-500 focus:ring-4 focus:outline-none focus:ring-stone-500 dark:bg-transparent dark:hover:stone-500 dark:focus:stone-500"
+      >
+		Learn More       
+		 <svg
+          class="w-3.5 h-3.5 ml-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+        </svg>
+      </a>
+      <img class="tarot-image" alt="tarot" />{image}
+    <!-- </div> -->
+</div>
+<!-- 2nd Card -->
 
-<li class="link-card">
+  <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h1>{title}</h1>
+    <a>{href}</a>
+    <!-- <div class="p-5"> -->
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+		I don't chase, I attract. What belongs to me will simply find me.
+      </p>
+      <a
+        {href}
+        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-stone-500 focus:ring-4 focus:outline-none focus:ring-stone-500 dark:bg-transparent dark:hover:stone-500 dark:focus:stone-500"
+      >
+		Learn More        
+		<svg
+          class="w-3.5 h-3.5 ml-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+        </svg>
+      </a>
+      <img class="tarot-image" alt="tarot" />{image}
+    <!-- </div> -->
+  </div>
+
+<!-- 3rd card -->
+
+  <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <h1>{title}</h1>
+    <a>{href}</a>
+    <!-- <div class="p-5"> -->
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+		I don't chase, I attract. What belongs to me will simply find me.
+      </p>
+      <a
+        {href}
+        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-stone-500 focus:ring-4 focus:outline-none focus:ring-stone-500 dark:bg-transparent dark:hover:stone-500 dark:focus:stone-500"
+      >
+		Learn More        
+		<svg
+          class="w-3.5 h-3.5 ml-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+        </svg>
+      </a>
+      <img class="tarot-image" alt="tarot" />{image}
+  </div>
+</div>
+<!-- <a {href}> -->
+<!-- <img {image}  /> -->
+<!-- <img  class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" /> -->
+<!-- </a> -->
+
+<!-- <li class="link-card">
 	<a href={href}>
 		<h2>
 			{title}
@@ -18,8 +118,8 @@ const { href, title, body } = Astro.props;
 			{body}
 		</p>
 	</a>
-</li>
-<style>
+</li> -->
+<!-- <style>
 	.link-card {
 		list-style: none;
 		display: flex;
@@ -58,4 +158,4 @@ const { href, title, body } = Astro.props;
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
 	}
-</style>
+</style> -->
