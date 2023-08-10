@@ -1,89 +1,114 @@
 ---
-const {title} = Astro.props
+const { title } = Astro.props;
 import "../styles/global.css";
 import Card from "../components/Card.astro";
 import Hero from "../layouts/Hero.astro";
 ---
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content={Astro.generator}/>
-    <link rel="icon" type="image/png" href="favicon/favicon.ico">    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="favicon/favicon.ico" />
     <title>{title}</title>
-</head>
-<body>
-    <nav class='bg-neutral-950 mb-10 relative'>
-        <div class='container flex flex-wrap items-center justify-around mx-auto'>
+  </head>
+  <body>
+    <nav>
+        <div class='container flex flex-wrap items-center justify-between mx-auto'>
             <div class='w-full'>
-                <ul class='flex p-4 mt-4 justify-around text-lg relative'>
+                <ul class='flex p-4 mt-4 justify-around text-lg'>
                     <li>
                         <a href="/" class='text-white hover:text-orange-400'>Home</a>
                     </li>
                     <li>
-                        <a href="signs" class='text-white hover:text-orange-400'>Signs</a>
+                        <a href="/signs" class='text-white hover:text-orange-400'>Signs</a>
                     </li>
                     <li>
-                        <a href="luv" class='text-white hover:text-orange-400'>Luuv</a>
+                        <a href="/luv" class='text-white hover:text-orange-400'>Luuv</a>
                     </li>
                     <li>
-                        <a href="chart" class='text-white hover:text-orange-400'>Your Chart</a>
+                        <a href="/chart" class='text-white hover:text-orange-400'>Your Chart</a>
                     </li>
-                    <li class="relative-grup">
-                        <!-- <div class="relative inline-block text-left"> -->
-                        <button type="button" class="bg-neutral-950 text-white" id="menu-button" aria-expanded="true">
-                          Universe Search
-                          <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                          </svg>
-                        </button>
-                        <!-- </div> -->
-                        <ul class="py-1 absolute left-0 top-full hidden group-hover:block bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="relative inline-block text-left">
+                        <div>
+                          <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                            Options
+                            <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                      
+                        <!--
+                          Dropdown menu, show/hide based on menu state.
+                      
+                          Entering: "transition ease-out duration-100"
+                            From: "transform opacity-0 scale-95"
+                            To: "transform opacity-100 scale-100"
+                          Leaving: "transition ease-in duration-75"
+                            From: "transform opacity-100 scale-100"
+                            To: "transform opacity-0 scale-95"
+                        -->
+                        <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                          <div class="py-1" role="none">
+                            <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                             <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
                             <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
                             <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
                             <form method="POST" action="#" role="none">
                               <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
                             </form>
-                        </ul>
-                    </li>
-                     <!-- </div> -->
+                          </div>
+                        </div>
+                      </div>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class='container flex flex-col mx-auto h-screen text-white'>
-        <h1 class='text-white text-4xl mb-10'>{title}</h1>
-    <slot />
-    </div>
-    <Hero></Hero>
-    
-<Card></Card>
-<script>
-    const menuButton = document.getElementById("menu-button");
-    const dropdown = document.querySelector(".dropdown-menu");
 
-    menuButton.addEventListener("click", () => {
-        dropwdown.classList.toggle("hidden");
-        dropdown.classList.toggle("block");
-    });
-</script>
-</body>
-<footer class='p-4 bg-neutral-950 flex justify-between'>
-    <span class='text-white'>
-        © 2023 <a href="https://www.deedeeportfolio.com/" class="hover:underline text-white" target="_blank">Deedee</a>
-        .All Rights Reserved.
+    <div class="container flex flex-col mx-auto h-screen text-white" id="astro-title">
+      <h1 class="text-white text-4xl mb-10 ml-30px">{title}</h1>
+      <slot />
+    </div>
+
+    <Hero />
+
+    <Card />
+    <script>
+        const menuButton = document.getElementById("menu-button");
+const dropdown = document.querySelector(".absolute.right-0.z-10"); // Get the dropdown menu element
+
+menuButton.addEventListener("click", (event) => {
+    event.preventDefault();
+  dropdown.classList.toggle("hidden"); // Toggle the "hidden" class to show/hide the dropdown
+});
+window.addEventListener("beforeunload", () => {
+    dropdown.classList.add("hidden");
+});
+
+    </script>
+    
+  </body>
+  <footer class="p-4 bg-neutral-950 flex justify-between">
+    <span class="text-white">
+      © 2023 <a
+        href="https://www.deedeeportfolio.com/"
+        class="hover:underline text-white"
+        target="_blank">Deedee</a
+      >
+      .All Rights Reserved.
     </span>
-    <ul class='flex flex-wrap items-center gap-x-5 text-white h-20'>
-        <li>
-            <a href="#" class='hover:underline'>About</a>
-        </li>
-        <li>
-            <a href="#" class='hover:underline'>Privacy Policy</a>
-        </li>
-        <li>
-            <a href="#" class='hover:underline'>Contact</a>
-        </li>
+    <ul class="flex flex-wrap items-center gap-x-5 text-white h-20">
+      <li>
+        <a href="#" class="hover:underline">About</a>
+      </li>
+      <li>
+        <a href="#" class="hover:underline">Privacy Policy</a>
+      </li>
+      <li>
+        <a href="#" class="hover:underline">Contact</a>
+      </li>
     </ul>
-</footer>
+  </footer>
 </html>

@@ -9,29 +9,39 @@
 }
 
 body {
-    background: url("https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1105&q=80");
+    background: url("/images/universe.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+#astro-title {
+    margin: 51px 0 0 39px;
+}
 /* MainLayout */
 /* Hero Banner */
 .hero-container {
-    bottom: 800px;
+    bottom: 300px;
 }
 /* nav {
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-    font-family: Oswald, sans-serif;
-    font-size: 24px;
-    letter-spacing: 3px;
-    padding: 3px;
-    width: 100vw;
-    height: 14vh;
-    background: rgb(255 255 255 / 50%);
-    top: 0;
-  } */
+    background-color: black;
+} */
+
+nav ul li a:hover {
+    color: rgb(166, 126, 204);
+}
+
+  
+  
+  
+  
+
+
+/* button:hover {
+    cursor: pointer;
+    display: inline-block;
+} */
+
+
 
 /* Signs Layout */
 .signs-container {
