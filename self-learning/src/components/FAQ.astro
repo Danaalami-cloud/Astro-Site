@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+---
+
+<div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-questions-container">
+        <button class="faq-accordion"> Why should I believe in astrology?</button>
+        <div class="panel">
+            <p>Because it's all connected babes</p>
+        </div>
+
+        <button class="faq-accordion">How will this help me understand humanity and myself?</button>
+        <div class="panel">
+            <p>When you look at your chart with what time and place your were born, can help us identify your amazing yet not perfect personality.</p>
+        </div>
+
+        <button class="faq-accordion">What does it mean when someone asks me what are my big 3?</button>
+        <div class="panel">
+            <p>What they mean is, what's your sun, moon, and rising sign.</p>
+        </div>
+
+        <button class="faq-accordion">What app do you recoomend to use for someone who is a beginner in this big big world?</button>
+        <div class="panel">
+            <p>The app is called TimePassages,babes</p>
+        </div>
+
+        <button class="faq-accordion">Can astrology show me the future?</button>
+        <div class="panel">
+            <p>Future? nah hun, only the Lord knows the future.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const faqButtons = document.querySelectorAll(".faq-accordion");
+
+    faqButtons.forEach(button => {
+        button.addEventListener("click", function(){
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    });
+</script>
