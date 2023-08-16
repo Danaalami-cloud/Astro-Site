@@ -2,8 +2,8 @@
 import "../styles/global.css";
 ---
 
-<div class="faq-container">
-    <h1>Frequently Asked Questions</h1>
+<!-- <div class="faq-container"> -->
+    <h1 class="faq-title">Frequently Asked Questions</h1>
     <div class="faq-questions-container">
         <button class="faq-accordion"> Why should I believe in astrology?</button>
         <div class="panel">
@@ -30,20 +30,10 @@ import "../styles/global.css";
             <p>Future? nah hun, only the Lord knows the future.</p>
         </div>
     </div>
-</div>
+    <button class="faq-button">
+        <h3>Visit astro.help.com</h3>
+    </button>
+<!-- </div> -->
 
 <script>
-    const faqButtons = document.querySelectorAll(".faq-accordion");
-
-    faqButtons.forEach(button => {
-        button.addEventListener("click", function(){
-            this.classList.toggle("active");
-            const panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    });
 </script>

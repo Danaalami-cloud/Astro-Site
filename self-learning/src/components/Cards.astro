@@ -1,0 +1,18 @@
+---
+import Card from "./Card.astro";
+import type { Props as CardProp } from "./Card.astro";
+
+// Define the Props for this component
+type Props = {
+    cards: CardProp[];
+};
+// Retrieve the cards prop
+const { cards } = Astro.props;
+---
+
+<div class="card-container">
+    {cards.map((card) => 
+    <Card {...card }
+    />
+    )}
+</div>
