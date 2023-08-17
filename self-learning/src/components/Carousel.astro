@@ -1,0 +1,27 @@
+---
+export type Props = {
+  title: string;
+  image: string;
+  href: string;
+};
+
+const { href, title, image } = Astro.props;
+
+import "../styles/global.css";
+---
+
+<div class="carousel-container">
+  <div class="carousel-image-container">
+    <img src={image} alt={title} />
+
+    <div class="carousel-content">
+      <h1>{title}</h1>
+      <p>Is it Destiny or Fate?</p>
+      <a {href}>
+        <button class="carousel-button">
+          Learn more about your journey here
+        </button>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+---
+import Carousel from "../components/Carousel.astro";
+import type { Props as CarouselProp} from "./Carousel.astro";
+
+// Define the props
+type Props = {
+    carousels: CarouselProp[];
+};
+
+// REtrieve the crousel prop
+const { carousels } = Astro.props;
+---
+
+<div class="carousel-container">
+    {carousels.map((carousel) =>
+    <Carousel {...carousel}
+    />
+    )}
+</div>

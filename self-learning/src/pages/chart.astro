@@ -1,0 +1,49 @@
+---
+ import Carousels from "../components/Carousels.astro";
+ import Footer from "../layouts/Footer.astro";
+ import Nav from "../layouts/Nav.astro";
+ import covidChart from "../assets/covidChart.png";
+ import crystal from "../assets/crystal.png";
+ import houses from "../assets/houses.png";
+ import planet from "../assets/planet.png";
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+</head>
+<body>
+    <Nav />
+    <Carousels 
+    carousels={[
+        {
+            title: "Covid Chart",
+            href:"/chart",
+            image: covidChart,
+        },
+        {
+            title: "Crystal show",
+            href: "/signs",
+            image: crystal,
+        },
+        {
+            title: "Astro Planets",
+            href: "/planets",
+            image: planet,
+        },
+        {
+            title: "Astro Houses",
+            href: "/houses",
+            image: houses,
+        }
+    ]}
+    />
+    <Footer />
+<script>
+    import "../scripts/nav.js";
+    import "../scripts/carousel.js";
+</script>
+</body>
+</html>
