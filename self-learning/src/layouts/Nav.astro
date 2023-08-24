@@ -1,54 +1,124 @@
 ---
+const { image, title } = Astro.props;
+import { Icon } from "astro-icon";
 import "../styles/global.css";
 ---
 
 <nav>
-    <div class='container flex flex-wrap items-center justify-between mx-auto'>
-        <div class='w-full'>
-            <ul class='flex p-4 mt-4 justify-around text-lg'>
-                <li>
-                    <a href="/" class='text-white hover:text-orange-400'>Home</a>
-                </li>
-                <li>
-                    <a href="/signs" class='text-white hover:text-orange-400'>Signs</a>
-                </li>
-                <li>
-                    <a href="/luv" class='text-white hover:text-orange-400'>Luuv</a>
-                </li>
-                <li>
-                    <a href="/chart" class='text-white hover:text-orange-400'>Your Chart</a>
-                </li>
-                <li>
-                  <a href="/planets" class='text-white hover:text-orange-400'>Planets</a>
-              </li>
-              <li>
-                <a href="/houses" class='text-white hover:text-orange-400'>Houses</a>
-            </li>
-            <li>
-              <a href="/angel" class='text-white hover:text-orange-400'>Angel Numbers</a>
+  <div class="container flex flex-wrap items-center justify-between ml-94">
+    <img class="nav-logo" src={image} alt={title} />
+    <div class="w-full">
+      <ul class="nav-elements">
+        <!-- <ul class='flex p-4 mt-4 justify-around'> -->
+        <li>
+          <a href="/" class="text-white hover:text-orange-400"
+            >Hosted Phone System</a
+          >
+        </li>
+        <li>
+          <a href="/signs" class="text-white hover:text-orange-400"
+            >Business Internet</a
+          >
+        </li>
+        <li>
+          <a href="/luv" class="text-white hover:text-orange-400">IT Support</a>
+        </li>
+        <li>
+          <a href="/chart" class="text-white hover:text-orange-400">Mobiles</a>
+        </li>
+        <li>
+          <a href="/planets" class="text-white hover:text-orange-400"
+            >Software Licensing</a
+          >
+        </li>
+        <li>
+          <a href="/houses" class="text-white hover:text-orange-400"
+            >Contact Centre</a
+          >
+        </li>
+        <li>
+          <a href="/angel" class="text-white hover:text-orange-400">WiFi</a>
+        </li>
+        <li>
+          <a href="/angel" class="text-white hover:text-orange-400">Security</a>
+        </li>
+        <li>
+          <a href="/angel" class="text-white hover:text-orange-400"
+            >Cyber Security</a
+          >
+        </li>
+        <div class="nav-right">
+          <Icon class="phone-icon" name="fontisto:phone" />
+          <!-- <i class="fa-solid fa-phone-flip" style="color: #ffffff;"></i> -->
+          <div class="product-dropdown">
+            <!-- <div class="relative inline-block text-left"> -->
+            <!-- <div> -->
+            <button
+              type="button"
+              class="dropdown-button"
+              id="menu-button"
+              aria-expanded="true"
+              aria-haspopup="true"
+            >
+              <!-- <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true"> -->
+              Product
+              <svg
+                class="-mr-1 h-5 w-5 text-gray-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <!-- </div> -->
+
+            <!-- <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"> -->
+            <div class="py-1" role="none" id="dropdown">
+              <a
+                href="#"
+                class="text-slate-50 block px-4 py-2 text-sm"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-0">Account settings</a
+              >
+              <a
+                href="#"
+                class="text-slate-50 block px-4 py-2 text-sm"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-1">Support</a
+              >
+              <a
+                href="#"
+                class="text-slate-50 block px-4 py-2 text-sm"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-2">License</a
+              >
+              <!-- <form method="POST" action="#" role="none">
+                <button
+                  type="submit"
+                  class="text-slate-50 block w-full px-4 py-2 text-left text-sm"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-3">Sign out</button
+                >
+              </form> -->
+            </div>
+            <!-- </div> -->
+          </div>
+          <li>
+            <a href="/angel" class="text-white hover:text-orange-400"
+              >My Account</a
+            >
           </li>
-                <div class="relative inline-block text-left">
-                    <div>
-                      <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-                        Search the Universe
-                        <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                    </div>
-                  
-                    <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                      <div class="py-1" role="none" id="dropdown">
-                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
-                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
-                        <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
-                        <form method="POST" action="#" role="none">
-                          <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-            </ul>
+          <Icon class="cart-icon" name="raphael:cart" />
         </div>
+      </ul>
     </div>
+  </div>
 </nav>

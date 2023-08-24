@@ -1,8 +1,8 @@
 ---
 
 // import Layout from '../layouts/Layout.astro';
-// import Hero from "../layouts/Hero.astro";
-import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../layouts/Hero.astro";
+// import MainLayout from "../layouts/MainLayout.astro";
 import Universe from "../components/Universe.astro";
 import Footer from "../layouts/Footer.astro";
 import Nav from "../layouts/Nav.astro";
@@ -10,6 +10,7 @@ import Cards from "../components/Cards.astro";
 import tarot from "../assets/tarot.png";
  import chart from "../assets/chart.png";
  import moon from "../assets/moon.png";
+ import earth from "../assets/earth.mp4";
 // const { Props } = Astro.props;
    
 ---
@@ -19,14 +20,17 @@ import tarot from "../assets/tarot.png";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-	<link rel="icon" type="image/png"  href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png"  href="/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
 	<title>Home</title>
   </head>
   <body>
     <Nav />
-    <MainLayout />
+
+    <Hero  />
+
     <Cards 
 	cards={[
 	{
@@ -51,6 +55,7 @@ import tarot from "../assets/tarot.png";
 
     <script>
       import "../scripts/nav.js";
+      import "../scripts/hero.js";
     </script>
   </body>
 </html>

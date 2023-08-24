@@ -1,5 +1,6 @@
 const menuButton = document.getElementById("menu-button");
-const dropdown = document.querySelector(".absolute.right-0.z-10");
+// const dropdown = document.querySelector(".absolute.right-0.z-10");
+const dropdown = document.getElementById("dropdown");
 
 menuButton.addEventListener("click", (event) => {
     event.preventDefault();

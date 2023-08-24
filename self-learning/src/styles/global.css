@@ -9,7 +9,8 @@
 }
 
 body {
-    background: url("../assets/universe.png");
+    /* background: url("../assets/universe.png"); */
+    background: black;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -19,20 +20,101 @@ body {
 }
 /* MainLayout */
 /* Hero Banner */
-.hero-container {
-    bottom: 300px;
-}
+
 /* nav {
     background-color: black;
 } */
 
-nav ul li a:hover {
+/* nav ul li a:hover {
     color: rgb(166, 126, 204);
+} */
+
+ nav {
+top: 0;
+left: 0;
+background: transparent;
+font-size: 11px;
+
+ }
+
+ .nav-elements {
+    display: flex;
+    gap: 36px;
+    padding: 25px;
+ }
+ 
+.nav-logo {
+    background-image: url("../assets/companyLogo.png");
+    cursor: pointer;
+}
+.nav-right {
+    display: flex;
+    gap: 14px;
+    position: absolute;
+    right: 5px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.phone-icon {
+    color: white;
+    width: 17px;
+    cursor: pointer;
 }
 
-#dropdown a {
-    color: gray;
+.cart-icon {
+    color: white;
+    width: 17px;
+    cursor: pointer;
 }
+
+.product-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.product-dropdown button {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5px;
+    color: white;
+}
+/* #dropdown a {
+    color: gray;
+} */
+
+/* Hero Banner */
+.hero-container {
+    /* top: 81px; */
+    height: 100vh;
+    width: 100%;
+}
+.player {
+    width: 100%;
+    width: 100%;
+    /* border: 5px solid orangered; */
+    border-radius: 10px;
+    background-color: black;
+    position: absolute;
+    cursor: pointer;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+video {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+/* .company-video {
+    background: url("../assets/companyVideo.mp4");
+    background-repeat: no-repeat;
+    background-position: cover;
+} */
 
 /* Universe component */
 .universe-container {
@@ -40,6 +122,8 @@ nav ul li a:hover {
     margin-top: 40px;
     margin-left: 30px;
     height: 397px;
+    top: 494px;
+    position: relative;
 }
 
 .image-container {
@@ -53,11 +137,11 @@ nav ul li a:hover {
     height: 100%;
 }
 
-.text-left {
+/* .text-left {
     font-size: 25px;
     background-color: rgb(186, 139, 231);
     margin-left: 11px;
-}
+} */
 
 .text-left a {
     color: #1d4ed8;
@@ -127,6 +211,8 @@ nav ul li a:hover {
     width: 95%;
     margin-left: 40px;
     display: flex;
+    top: 125px;
+    position: relative;
   }
 
   .card-content {
