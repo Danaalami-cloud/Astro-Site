@@ -1,0 +1,22 @@
+---
+export type Props = {
+    title: string;
+    video: string;
+}
+
+const { title } = Astro.props;
+
+import verkadaProduct from "../assets/verkadaProduct.mp4";
+import camera from "../assets/camera.mp4"
+import "../styles/global.css";
+
+---
+
+<div class="main-products__container">
+    <h1>{title}</h1>
+    <div class="main-products__video-container">
+        <video class="main-products__video" src={verkadaProduct} playsinline autoplay loop muted>
+        </video>
+</div>
+</div>
+

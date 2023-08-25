@@ -41,11 +41,17 @@ font-size: 11px;
     display: flex;
     gap: 36px;
     padding: 25px;
+    position: absolute;
+    right: 108px;
+    left: 43px;
  }
  
 .nav-logo {
-    background-image: url("../assets/companyLogo.png");
     cursor: pointer;
+    position: fixed;
+    top: 15px;
+    width: 34px;
+    left: 12px;
 }
 .nav-right {
     display: flex;
@@ -110,12 +116,41 @@ video {
     width: 100%;
     height: auto;
 }
+
+iframe {
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    height: 59%;
+}
 /* .company-video {
     background: url("../assets/companyVideo.mp4");
     background-repeat: no-repeat;
     background-position: cover;
 } */
 
+
+/* mainProducts container */
+.main-products__container {
+    background: white;
+    height: 698px;
+}
+.main-products__container h1 {
+    position: absolute;
+    left: 38%;
+    /* top: 105%; */
+    color: black;
+    font-size: 47px;
+}
+
+.main-products__video {
+    width: 52%;
+    /* height: 30%; */
+    top: 93px;
+    position: relative;
+    left: 28%;
+    border-radius: 30px;
+}
 /* Universe component */
 .universe-container {
     display: flex;

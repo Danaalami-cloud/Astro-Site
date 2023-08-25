@@ -1,61 +1,62 @@
 ---
 const { image, title } = Astro.props;
 import { Icon } from "astro-icon";
+import  companyLogo  from "../assets/companyLogo.png";
 import "../styles/global.css";
 ---
 
 <nav>
   <div class="container flex flex-wrap items-center justify-between ml-94">
-    <img class="nav-logo" src={image} alt={title} />
+    <img class="nav-logo" src={companyLogo} alt={title} />
     <div class="w-full">
       <ul class="nav-elements">
         <!-- <ul class='flex p-4 mt-4 justify-around'> -->
         <li>
-          <a href="/" class="text-white hover:text-orange-400"
+          <a href="/" class="text-white hover:text-green-900"
             >Hosted Phone System</a
           >
         </li>
         <li>
-          <a href="/signs" class="text-white hover:text-orange-400"
+          <a href="/signs" class="text-white hover:text-lime-600"
             >Business Internet</a
           >
         </li>
         <li>
-          <a href="/luv" class="text-white hover:text-orange-400">IT Support</a>
+          <a href="/luv" class="text-white hover:text-lime-600">IT Support</a>
         </li>
         <li>
-          <a href="/chart" class="text-white hover:text-orange-400">Mobiles</a>
+          <a href="/chart" class="text-white hover:text-lime-600">Mobiles</a>
         </li>
         <li>
-          <a href="/planets" class="text-white hover:text-orange-400"
+          <a href="/planets" class="text-white hover:text-lime-600"
             >Software Licensing</a
           >
         </li>
         <li>
-          <a href="/houses" class="text-white hover:text-orange-400"
+          <a href="/houses" class="text-white hover:text-lime-600"
             >Contact Centre</a
           >
         </li>
         <li>
-          <a href="/angel" class="text-white hover:text-orange-400">WiFi</a>
+          <a href="/angel" class="text-white hover:text-lime-600">WiFi</a>
         </li>
         <li>
-          <a href="/angel" class="text-white hover:text-orange-400">Security</a>
+          <a href="/angel" class="text-white hover:text-lime-600">Security</a>
         </li>
         <li>
-          <a href="/angel" class="text-white hover:text-orange-400"
+          <a href="/angel" class="text-white hover:text-lime-600"
             >Cyber Security</a
           >
         </li>
         <div class="nav-right">
-          <Icon class="phone-icon" name="fontisto:phone" />
+          <Icon class="phone-icon hover:text-lime-600" name="fontisto:phone" />
           <!-- <i class="fa-solid fa-phone-flip" style="color: #ffffff;"></i> -->
-          <div class="product-dropdown">
+          <div class="product-dropdown hover:text-lime-600">
             <!-- <div class="relative inline-block text-left"> -->
             <!-- <div> -->
             <button
               type="button"
-              class="dropdown-button"
+              class="dropdown-button hover:text-lime-600"
               id="menu-button"
               aria-expanded="true"
               aria-haspopup="true"
@@ -80,21 +81,21 @@ import "../styles/global.css";
             <div class="py-1" role="none" id="dropdown">
               <a
                 href="#"
-                class="text-slate-50 block px-4 py-2 text-sm"
+                class="text-slate-50 block px-4 py-2 text-sm hover:text-lime-600"
                 role="menuitem"
                 tabindex="-1"
                 id="menu-item-0">Account settings</a
               >
               <a
                 href="#"
-                class="text-slate-50 block px-4 py-2 text-sm"
+                class="text-slate-50 block px-4 py-2 text-sm hover:text-lime-600"
                 role="menuitem"
                 tabindex="-1"
                 id="menu-item-1">Support</a
               >
               <a
                 href="#"
-                class="text-slate-50 block px-4 py-2 text-sm"
+                class="text-slate-50 block px-4 py-2 text-sm hover:text-lime-600"
                 role="menuitem"
                 tabindex="-1"
                 id="menu-item-2">License</a
@@ -112,11 +113,11 @@ import "../styles/global.css";
             <!-- </div> -->
           </div>
           <li>
-            <a href="/angel" class="text-white hover:text-orange-400"
+            <a href="/angel" class="text-white hover:text-lime-600"
               >My Account</a
             >
           </li>
-          <Icon class="cart-icon" name="raphael:cart" />
+          <Icon class="cart-icon hover:text-lime-600" name="raphael:cart" />
         </div>
       </ul>
     </div>
