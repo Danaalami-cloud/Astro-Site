@@ -15,6 +15,7 @@ body {
     background-size: cover;
 }
 
+
 #astro-title {
     margin: 51px 0 0 39px;
 }
@@ -151,6 +152,53 @@ iframe {
     left: 28%;
     border-radius: 30px;
 }
+
+/* Logos Component section */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%) ;
+    }
+}
+
+.logos__container {
+    overflow: hidden;
+    background: white;
+    top: 50px;
+    padding: 60px 0;
+    top: 176%;
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+
+}
+
+.logos-slide {
+    display: inline-flex;
+    animation: 5s scroll infinite linear;
+
+}
+.logos-slide img {
+    height: 50px;
+    margin: 0 40px;
+
+}
+
+ /* .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: calc(35px * 14);
+}
+
+ .slide {
+    height: 100px;
+    width: 26px;
+
+} */
 /* Universe component */
 .universe-container {
     display: flex;

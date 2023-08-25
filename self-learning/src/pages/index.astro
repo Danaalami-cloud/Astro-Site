@@ -3,6 +3,7 @@
 // import Layout from '../layouts/Layout.astro';
 import Hero from "../layouts/Hero.astro";
 import MainProduct from "../components/MainProduct.astro";
+import LogosSlider from "../components/LogosSlider.astro";
 // import MainLayout from "../layouts/MainLayout.astro";
 import Universe from "../components/Universe.astro";
 import Footer from "../layouts/Footer.astro";
@@ -13,6 +14,7 @@ import tarot from "../assets/tarot.png";
  import moon from "../assets/moon.png";
 const { Props } = Astro.props;
 import verkadaProduct from "../assets/verkadaProduct.mp4";
+import "../styles/global.css";
    
 ---
 
@@ -33,8 +35,10 @@ import verkadaProduct from "../assets/verkadaProduct.mp4";
     <Hero  />
 
    <MainProduct title='Beyond Trade Security' video="verkadaProduct" />
+
+   <LogosSlider  />
     
-    <Cards 
+    <!-- <Cards 
 	cards={[
 	{
         title: "Tarot Cards",
@@ -52,8 +56,8 @@ import verkadaProduct from "../assets/verkadaProduct.mp4";
         image: moon,
     },
 	]}
-	/>
-    <Universe />
+	/> -->
+    <!-- <Universe /> -->
     <Footer />
 
     <script>
