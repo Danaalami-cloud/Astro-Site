@@ -1,0 +1,432 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background: url("../assets/universe.png"); */
+    background: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#astro-title {
+    margin: 51px 0 0 39px;
+}
+/* MainLayout */
+/* Hero Banner */
+
+/* nav {
+    background-color: black;
+} */
+
+/* nav ul li a:hover {
+    color: rgb(166, 126, 204);
+} */
+
+ nav {
+top: 0;
+left: 0;
+background: transparent;
+font-size: 11px;
+
+ }
+
+ .nav-elements {
+    display: flex;
+    gap: 36px;
+    padding: 25px;
+    position: absolute;
+    right: 108px;
+    left: 43px;
+ }
+ 
+.nav-logo {
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    width: 34px;
+    left: 12px;
+}
+.nav-right {
+    display: flex;
+    gap: 14px;
+    position: absolute;
+    right: 5px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.phone-icon {
+    color: white;
+    width: 17px;
+    cursor: pointer;
+}
+
+.cart-icon {
+    color: white;
+    width: 17px;
+    cursor: pointer;
+}
+
+.product-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.product-dropdown button {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5px;
+    color: white;
+}
+/* #dropdown a {
+    color: gray;
+} */
+
+/* Hero Banner */
+.hero-container {
+    /* top: 81px; */
+    height: 100vh;
+    width: 100%;
+}
+.player {
+    width: 100%;
+    width: 100%;
+    /* border: 5px solid orangered; */
+    border-radius: 10px;
+    background-color: black;
+    position: absolute;
+    cursor: pointer;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+video {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+
+iframe {
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    height: 59%;
+}
+/* .company-video {
+    background: url("../assets/companyVideo.mp4");
+    background-repeat: no-repeat;
+    background-position: cover;
+} */
+
+
+/* mainProducts container */
+.main-products__container {
+    background: white;
+    height: 698px;
+}
+.main-products__container h1 {
+    position: absolute;
+    left: 38%;
+    /* top: 105%; */
+    color: black;
+    font-size: 47px;
+}
+
+.main-products__video {
+    width: 52%;
+    /* height: 30%; */
+    top: 93px;
+    position: relative;
+    left: 28%;
+    border-radius: 30px;
+}
+
+/* Logos Component section */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%) ;
+    }
+}
+
+.logos__container {
+    overflow: hidden;
+    background: white;
+    top: 50px;
+    padding: 60px 0;
+    top: 176%;
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+
+}
+
+.logos-slide {
+    display: inline-flex;
+    animation: 5s scroll infinite linear;
+
+}
+.logos-slide img {
+    height: 50px;
+    margin: 0 40px;
+
+}
+
+ /* .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: calc(35px * 14);
+}
+
+ .slide {
+    height: 100px;
+    width: 26px;
+
+} */
+/* Universe component */
+.universe-container {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 30px;
+    height: 397px;
+    top: 494px;
+    position: relative;
+}
+
+.image-container {
+    width: 83%;
+    height: 396px;
+    margin-right: 35px;
+}
+.image-right {
+    background-image: url("../assets/cancer.png");
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+/* .text-left {
+    font-size: 25px;
+    background-color: rgb(186, 139, 231);
+    margin-left: 11px;
+} */
+
+.text-left a {
+    color: #1d4ed8;
+    margin-left: 11px;
+}
+
+.text-svg {
+    right: 74%;
+    position: absolute;
+    top: 398%;
+    fill: #1d4ed8;
+}
+
+.text-left p {
+    margin-left: 11px;
+    margin-top: 21%;
+}
+
+
+
+/* Signs Layout */
+.signs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .twelve-signs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 59%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    color: white;
+  }
+  
+  .twelve-signs li {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3.5px solid rgb(164 16 242);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 25px 27px 22px 39px;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 33px;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+
+  /* Cards */
+  .card-container {
+    gap: 50px;
+    width: 95%;
+    margin-left: 40px;
+    display: flex;
+    top: 125px;
+    position: relative;
+  }
+
+  .card-content {
+    background: rgb(47, 46, 46);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 82%;
+  }
+    /* .tarot-image {
+    width: 385px;
+    height: 470px;
+    } */
+
+/* FAQ Component */
+
+.faq-title {
+    color: beige;
+    margin-left: 39%;
+    margin-top: 5%;
+    font-size: 25px;
+}
+.faq-questions-container {
+    background-color: #ffcbf2;
+    margin-left: 30px;
+    margin-top: 28px;
+    width: 95%;
+    font-size: 20px;
+    border-radius: 20px;
+    /* margin-left: 30%; */
+  }
+.faq-accordion {
+    /* background-color: rgb(212, 177, 244); */
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.faq-accordion:active, .faq-accordion:hover {
+    background-color: #7b2cbf;
+}
+
+.faq-accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 23px;
+  color: black;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+    content:'\2613'; /* Unicode character for "minus" sign (-) */
+    font-size: 23px;
+    color:black;
+    float: right;
+    margin-left: 5px;
+  }
+
+.panel {
+    padding: 7px 16px 10px 13px;
+    /* background-color: white; */
+    display: none;
+    overflow: hidden;
+    height: 50px;
+    color: #8923e9;
+    margin-left: 5px;
+}
+
+.panel p {
+    padding: 7px;
+}
+
+.faq-button {
+    background: rgb(234, 149, 190);
+    border-radius: 30px;
+    width: 21%;
+    margin-left: 37%;
+    margin-top: 19px
+}
+
+/* Carousel CArds componenet */
+.carousel-container {
+    display: flex;
+    width: 80%;
+    gap: 35px;
+    margin-left: 40px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: baseline;
+}
+.carousel-content {
+    color: white;
+}
+
+.carousel-image-container {
+    width: 100%;
+    height: 82%;
+}
+
+
+.carousel-content .carousel-button {
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 30px;
+    padding: 9px;
+    background: transparent;
+    transition-duration: 0.3s;
+    visibility: hidden;
+}
+/* .carousel-button {
+    visibility: visible;
+} */
+
+.carousel-content:hover .carousel-button {
+    opacity: 1; /* Display on hover */
+    visibility: visible; /* Display on hover */
+}
+
+.carousel-content .carousel-button:hover {
+    background-color: #b78ddf;
+    display:block;
+    color: white;
+
+
+}
+
+footer {
+    margin-top: 30%;
+}
