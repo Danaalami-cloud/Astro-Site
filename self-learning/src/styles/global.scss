@@ -1,0 +1,478 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root{
+    --orbitItemSize: 3em;
+    --numRings: 3;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("/darkUniverse.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#astro-title {
+    margin: 51px 0 0 39px;
+}
+/* MainLayout */
+/* Hero Banner */
+.hero-container {
+    bottom: 300px;
+}
+/* nav {
+    background-color: black;
+} */
+
+nav ul li a:hover {
+    color: rgb(166, 126, 204);
+}
+
+#dropdown a {
+    color: gray;
+}
+
+/* Daily Horoscope Component */
+$orbitItemSize: 3.6em;
+$map: (ring-0: 12, ring-1: 3, ring-2: 8, ring-3: 3);
+$lastRing: 3;
+
+
+.orbit {
+  float: left;
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.orbit-icon {
+  width: $orbitItemSize;
+  height: $orbitItemSize;
+  line-height: $orbitItemSize;
+  font-size: 1.2em;
+  border-radius: 50%;
+  background: #ccc;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+
+.orbit-wrap {
+  height: 38em;
+  list-style: none;
+  font-size: 1.3em;
+  
+  > li {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    &:hover {
+      ul {
+        border-width: 2px;
+        border-color: #fff;
+      }
+      ~ li ul {
+        border-color: rgba(255, 255, 255, 0.2);
+        li {
+          opacity: 0.4;          
+        }
+      }
+    }
+    
+  }
+}
+
+ul[class^=ring] {
+  @extend %ring;
+  transition: all 300ms ease-in-out;
+  li {
+    @extend %orbiting-object;
+    transition: all 300ms ease-in-out;
+  }
+}
+
+@mixin orbit-item($numItems, $numRing) {
+  @for $s from 1 through $numItems {  
+    // Spread items over the ring
+    $deg: calc(380deg / $numItems);
+    
+    .ring-#{$numRing} > *:nth-of-type(#{$s}) {
+      transform: rotate($s * $deg) translate(19em - ($numRing * 2.5)) rotate(-$s * $deg);
+    }
+  }
+}
+
+// Render rings
+@for $i from 0 through $lastRing {  
+  .ring-#{$i} {
+    // decrease each ring in size
+    width: 38em - ($i * 5);
+    height: 38em - ($i * 5);
+    animation: clockwiseRotate 35s - ($i * 5) linear infinite;
+    
+    i {
+      animation: counterClockwiseRotate 35s - ($i * 5) linear infinite;
+    }
+  }
+  
+  @include orbit-item(map-get($map, ring-#{$i}), $i);
+}
+
+
+%ring {
+  border: solid 1px #7118e2;
+  position: relative;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  box-sizing: content-box;
+  top: 37em;
+  width: 38em;
+  height: 38em;
+}
+
+%orbiting-object {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $orbitItemSize;
+  height: $orbitItemSize;
+  margin: calc(-1 * $orbitItemSize /2);
+}
+
+/*
+  center;
+*/
+.orbit-center {
+  z-index: 5;
+  font-size: 2em;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8em;
+  text-align: center;
+  background: hotpink;
+  border-radius: 50%;
+  
+  &:hover .orbit-center__icon {
+    transform: rotateZ(0deg);
+  }
+}
+.orbit-center__icon {
+  transform: rotateZ(-360deg);
+  transition: all 300ms ease-in-out;
+}
+.orbit-wrap > li.orbit-center:hover ~ li > ul {
+  width: 0;
+  height: 0;
+  * {
+    transform: translate(0, 0);
+  }
+}
+
+/* 
+animations 
+*/
+@keyframes clockwiseRotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes counterClockwiseRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(-360deg);
+  }
+}
+
+/* 
+icons 
+*/
+$icons : (
+  ('heart-o', #b71c1c, white),
+  ('coffee', #4CAF50, #CDDC39),
+  ('safari', white, darkslateblue),
+  ('firefox', #1565c0, #ff8f00),
+  ('chrome', #fbc02d, #ef6c00),
+  ('edge', #03a9f4, white),
+  ('android', snow, limegreen),
+  ('apple', #444, white),
+  ('linux', white, #222),
+  ('windows', white, #03a9f4),
+  ('terminal', #222, #fff),
+  ('html5', white, #e65100),
+  ('css3', white, #2196f3),
+  ('git', #222, white),
+  ('free-code-camp', green, white),
+  ('meetup', red, white),
+  ('podcast', red, white),
+  ('codepen', #333, white)
+);
+
+@each $icon in $icons {
+  .fa-#{nth($icon, 1)} {
+    background: nth($icon, 2);
+    color: nth($icon, 3);
+  }
+}
+
+
+
+/* Universe component */
+.universe-container {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 30px;
+    height: 397px;
+}
+
+.image-container {
+    width: 83%;
+    height: 396px;
+    margin-right: 35px;
+}
+.image-right {
+    background-image: url("../assets/cancer.png");
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.text-left {
+    font-size: 25px;
+    background-color: rgb(186, 139, 231);
+    margin-left: 11px;
+}
+
+.text-left a {
+    color: #1d4ed8;
+    margin-left: 11px;
+}
+
+.text-svg {
+    right: 74%;
+    position: absolute;
+    top: 398%;
+    fill: #1d4ed8;
+}
+
+.text-left p {
+    margin-left: 11px;
+    margin-top: 21%;
+}
+
+
+
+/* Signs Layout */
+.signs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .twelve-signs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 59%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    color: white;
+  }
+  
+  .twelve-signs li {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3.5px solid rgb(164 16 242);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 25px 27px 22px 39px;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 33px;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+
+  /* Cards */
+  .card-container {
+    gap: 50px;
+    width: 95%;
+    margin-left: 40px;
+    display: flex;
+  }
+
+  .card-content {
+    background: rgb(47, 46, 46);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 82%;
+  }
+    /* .tarot-image {
+    width: 385px;
+    height: 470px;
+    } */
+
+/* FAQ Component */
+
+.faq-title {
+    color: beige;
+    margin-left: 39%;
+    margin-top: 5%;
+    font-size: 25px;
+}
+.faq-questions-container {
+    background-color: #ffcbf2;
+    margin-left: 30px;
+    margin-top: 28px;
+    width: 95%;
+    font-size: 20px;
+    border-radius: 20px;
+    /* margin-left: 30%; */
+  }
+.faq-accordion {
+    /* background-color: rgb(212, 177, 244); */
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.faq-accordion:active, .faq-accordion:hover {
+    background-color: #7b2cbf;
+}
+
+.faq-accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 23px;
+  color: black;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+    content:'\2613'; /* Unicode character for "minus" sign (-) */
+    font-size: 23px;
+    color:black;
+    float: right;
+    margin-left: 5px;
+  }
+
+.panel {
+    padding: 7px 16px 10px 13px;
+    /* background-color: white; */
+    display: none;
+    overflow: hidden;
+    height: 50px;
+    color: #8923e9;
+    margin-left: 5px;
+}
+
+.panel p {
+    padding: 7px;
+}
+
+.faq-button {
+    background: rgb(234, 149, 190);
+    border-radius: 30px;
+    width: 21%;
+    margin-left: 37%;
+    margin-top: 19px
+}
+
+/* Carousel CArds componenet */
+/* .carousel-container {
+    display: flex;
+    width: 80%;
+    gap: 35px;
+    margin-left: 40px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: baseline;
+    position: relative;
+    overflow: hidden;
+}
+
+.cards-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-card {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    width: 100%;
+} */
+/* .carousel-content {
+    color: white;
+} */
+
+/* .carousel-image-container {
+    width: 100%;
+    height: 82%;
+} */
+
+
+/* .carousel-content .carousel-button {
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 30px;
+    padding: 9px;
+    background: transparent;
+    transition-duration: 0.3s;
+    visibility: hidden;
+} */
+/* .carousel-button {
+    visibility: visible;
+} */
+
+/* .carousel-content:hover .carousel-button { */
+    /* opacity: 1; Display on hover */
+    /* visibility: visible; Display on hover */
+/* } */
+
+/* .carousel-content .carousel-button:hover {
+    background-color: #b78ddf;
+    display:block;
+    color: white;
+} */
+/* #next, #prev {
+    color: white;
+} */
+
+
+
+footer {
+    margin-top: 30%;
+}

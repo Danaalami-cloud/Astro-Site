@@ -1,4 +1,4 @@
----
+<!-- ---
 export type Props = {
   title: string;
   image: string;
@@ -7,21 +7,55 @@ export type Props = {
 
 const { href, title, image } = Astro.props;
 
-import "../styles/global.css";
+import "../styles/global.scss";
 ---
 
-<div class="carousel-container">
-  <div class="carousel-image-container">
-    <img src={image} alt={title} />
+<!-- <div class="carousel-container" id="slider">
+  <div class="cards-wrapper">
+    <div class="carousel-card">
+      <div class="carousel-image-container">
+        <img src={image} alt={title} />
 
-    <div class="carousel-content">
-      <h1>{title}</h1>
-      <p>Is it Destiny or Fate?</p>
-      <a {href}>
-        <button class="carousel-button">
-          Learn more about your journey here
-        </button>
-      </a>
+        <div class="carousel-content">
+          <h1>{title}</h1>
+          <p>Is it Destiny or Fate?</p>
+          <a {href}>
+            <button class="carousel-button">
+              Learn more about your journey here
+            </button>
+          </a>
+        </div>
+      </div>
+      <button aria-label="previous" class="carousel-nav prev" id="prev">
+        Previous
+      </button>
+      <button aria-label="next" class="carousel-nav next" id="next">
+        Next
+      </button>
     </div>
   </div>
+</div> -->
+<!-- <section id="carousel" class="carousel">
+    <nav class="carousel-nav">
+        <button type="button" class="carousel-prev">
+            <span class="sr">Previous</span>
+            <img src="icons/angle-left-solid.svg" alt="" aria-hidden="true">
+        </button>
+        <button type="button" class="carousel-next">
+            <span class="sr">Next</span>
+            <img src="icons/angle-right-solid.svg" alt="" aria-hidden="true">
+        </button>
+    </nav>
+    <ol class="carousel-wrap">
+        <li class="carousel-item">
+            <img class="carousel-image"  src="images/1.jpg" alt="">
+        </li>
+    </ol>    
+</section>
+<div id="carousel-overlay">
+    <a href="#carousel-overlay" id="carousel-overlay-close">&times;</a>
+    <div id="carousel-overlay-content">
+        <article id="carousel-overlay-product"></article>
+    </div>
 </div>
+<div id="loader" aria-hidden="true">Loading...</div>         --> 

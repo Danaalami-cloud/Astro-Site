@@ -1,4 +1,4 @@
----
+<!-- ---
  import Carousels from "../components/Carousels.astro";
  import Footer from "../layouts/Footer.astro";
  import Nav from "../layouts/Nav.astro";
@@ -6,6 +6,7 @@
  import crystal from "../assets/crystal.png";
  import houses from "../assets/houses.png";
  import planet from "../assets/planet.png";
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,36 @@
     <Footer />
 <script>
     import "../scripts/nav.js";
-    import "../scripts/carousel.js";
+    // import "../scripts/carousel.js";
+const cardsWrapper = document.querySelector(".cards-wrapper");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+
+// we calculate the card width including margin
+    // load(() => {
+
+    //     const cardWidth = document.querySelector(".carousel-card")?.offsetWidth;
+    // })
+
+
+let currentPosition = 0;
+
+prevBtn.addEventListener("click", () => {
+    currentPosition += cardWidth;
+    if (currentPosition > 0) {
+        currentPosition = 0;
+    }
+    cardsWrapper.computedStyleMap.transform = `translateX(${currentPosition}px)`;
+});
+
+nextBtn.addEventListener("click", () => {
+    currentPosition -= cardWidth;
+    const maxPosition = -(cardWidth * (cardsWrapper.children.length -1));
+    if (currentPosition < maxPosition) {
+        currentPosition = maxPosition;
+    }
+    cardsWrapper.computedStyleMap.transform = `translateX(${currentPosition}px)`;
+});
 </script>
 </body>
-</html>
+</html> -->
