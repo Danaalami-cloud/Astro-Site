@@ -4,11 +4,24 @@ import "../styles/global.scss";
 
 const DailyHoroscope = () => {
   const [horoscopeData, setHoroscopeData] = useState(null);
+  const [selectedSign, setSelectedSign] = useState(null);
+    
+  const fetchHoroscopeData = async (sunsign) => {
+    const formattedSign = sunsign.trim().toLowerCase();
+    console.log("Fetching data for:", sunsign);
+    console.log(sunsign);
+                                // DAILY HOROSCOPE API
+//     const url = `https://daily-horoscope-api.p.rapidapi.com/api/Daily-Horoscope-English/?zodiacSign=${formattedSign}&timePeriod=today`;
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '9768e1c98cmsh0656b49fad03c05p1178e7jsn475a3f9b5bb1',
+// 		'X-RapidAPI-Host': 'daily-horoscope-api.p.rapidapi.com'
+// 	}
+// };
 
-  useEffect(() => {
-    const fetchHoroscopeData = async () => {
-      const url =
-        "https://horoscope-astrology.p.rapidapi.com/horoscope?day=today&sunsign=libra";
+  const url =
+        `https://horoscope-astrology.p.rapidapi.com/horoscope?day=today&sunsign=${formattedSign}`;
       const options = {
         method: "GET",
         headers: {
@@ -18,27 +31,62 @@ const DailyHoroscope = () => {
         },
       };
 
-      try {
-        const response = await fetch(url, options);
-        const data = await response.json();
-        setHoroscopeData(data);
-      } catch (error) {
-        console.error(error);
+try {
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  // Check if the response contains valid data
+  if (data && data.horoscope) {
+    console.log("API Data:", data);
+    setHoroscopeData(data);
+  } else {
+    console.error("API Error: Invalid response format");
+  }
+} catch (error) {
+  console.error("API Error:", error);
+}
+};
+
+      
+
+      // try {
+      //   const response = await fetch(url, options);
+      //   const data = await response.json();
+      //   // Check if the response contains valid data
+      //   if (data && data.horoscope) {
+      //     console.log("API Data:", data);
+      //     setHoroscopeData(data);
+      //   } else {
+      //     console.error("API Error: Invalid response format");
+      //   }
+      // } catch (error) {
+      //   console.error("API Error:", error);
+      // }
+    // };
+      const handleSignClick = (sunsign) => {
+        console.log("clicked sign:", sunsign);
+
+        setSelectedSign(sunsign);
+        fetchHoroscopeData(sunsign);
+      };
+
+    useEffect(() => {
+      console.log("Selected Sign in useEffect", selectedSign);
+      if(selectedSign) {
+      fetchHoroscopeData(selectedSign);
       }
-    };
-
-    fetchHoroscopeData();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
-
+    },[selectedSign]);
+  
+ 
   return (
-    <section className="dailyHoroscope">
+    <section className="dailyHoroscope absolute top-[11em]">
       <div className="horoscope-container">
         <img
           className="horoscopeImage absolute w-[30%] left-[37%] top-[124%]"
           src={fortuneTeller}
           alt="fortune teller"
         />
-        <div className="horoscope-content absolute top-[71rem] text-white left-[27%] w-[47%] leading-[39px]">
+        <div className="horoscope-content absolute top-[84rem] text-white left-[36%] w-[41%] leading-[25px]">
           <h3>Your Horoscope for Today:</h3>
           {horoscopeData ? (
             <>
@@ -48,50 +96,55 @@ const DailyHoroscope = () => {
             <p>No horoscope data available</p>
           )}
         </div>
-        <div class="orbit">
-          <ul class="orbit-wrap">
+        <div className="orbit">
+          <ul className="orbit-wrap">
             <li>
-              <ul class="ring-0">
+              <ul className="ring-0">
                 <li>
-                  <i class="orbit-icon fa fa-windows">Aries</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "aries"? "selected" : ""}`} onClick={() => handleSignClick("Aries")} >Aries</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-safari">Taurus</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "taurus" ? "selected" : ""}`} onClick={() => handleSignClick("Taurus")}>Taurus</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-edge">Gemini</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "gemini" ? "selected" : ""}`} onClick={() => handleSignClick("Gemini")}>Gemini</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-linux">Cancer</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "cancer" ? "selected" : ""}`} onClick={() => handleSignClick("Cancer")}>Cancer</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-apple">Leo</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "leo" ? "selected" : ""}`} onClick={() => handleSignClick("Leo")}>Leo</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-chrome">Virgo</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "virgo" ? "selected" : ""}`} onClick={() => handleSignClick("Virgo")}>Virgo</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-android">Libra</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "libra" ? "selected" : ""}`} onClick={() => handleSignClick("Libra")}>Libra</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-firefox">Scorpio</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "scorpio" ? "selected" : ""}`} onClick={() => handleSignClick("Scorpio")}>Scorpio</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-firefox">Sagitarius</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "sagitarius" ? "selected" : ""}`} onClick={() => handleSignClick("Sagitarius")}>Sagitarius</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-firefox">Capricorn</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "capricorn" ? "selected" : ""}`} onClick={() => handleSignClick("Capricorn")}>Capricorn</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-firefox">Aquarius</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "aquarius" ? "selected" : ""}`} onClick={() => handleSignClick("Aquarius")}>Aquarius</i>
                 </li>
                 <li>
-                  <i class="orbit-icon fa fa-firefox">Pisces</i>
+                  <i className={`orbit-icon fa fa-firefox ${selectedSign === "pisces" ? "selected" : ""}`}onClick={() => handleSignClick("Pisces")}>Pisces</i>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
+        {selectedSign && (
+          <div className="selected-sign bg-violet-400	 w-[8vw] h-[15vh] absolute left-[48%] bottom-[-56%] rounded-[55%]">
+            <h3 className="relative text-white top-[23%] left-[5%] bg-none text-[24px] padding-[7px]">{selectedSign}</h3>
+          </div>
+        )}
       </div>
     </section>
   );
