@@ -205,24 +205,7 @@ animations
 icons 
 */
 $icons : (
-  ('heart-o', #b71c1c, white),
-  ('coffee', #4CAF50, #CDDC39),
-  ('safari', white, darkslateblue),
   ('firefox', rgb(167 139 250), white),
-  ('chrome', #fbc02d, #ef6c00),
-  ('edge', #03a9f4, white),
-  ('android', snow, limegreen),
-  ('apple', #444, white),
-  ('linux', white, #222),
-  ('windows', white, #03a9f4),
-  ('terminal', #222, #fff),
-  ('html5', white, #e65100),
-  ('css3', white, #2196f3),
-  ('git', #222, white),
-  ('free-code-camp', green, white),
-  ('meetup', red, white),
-  ('podcast', red, white),
-  ('codepen', #333, white)
 );
 
 @each $icon in $icons {
@@ -232,245 +215,146 @@ $icons : (
   }
 }
 
-
-
-/* Universe component */
-.universe-container {
+// Crystal Signs Component
+.sign-crystal {
+  display: flex;
+  justify-content: space-between;
+  gap: 9px;
+  // opacity: 0;
+  &:hover  .crystalSpan {
     display: flex;
-    margin-top: 40px;
-    margin-left: 30px;
-    height: 397px;
-}
-
-.image-container {
-    width: 83%;
-    height: 396px;
-    margin-right: 35px;
-}
-.image-right {
-    background-image: url("../assets/cancer.png");
-    background-repeat: no-repeat;
-    height: 100%;
-}
-
-.text-left {
-    font-size: 25px;
-    background-color: rgb(186, 139, 231);
-    margin-left: 11px;
-}
-
-.text-left a {
-    color: #1d4ed8;
-    margin-left: 11px;
-}
-
-.text-svg {
-    right: 74%;
-    position: absolute;
-    top: 398%;
-    fill: #1d4ed8;
-}
-
-.text-left p {
-    margin-left: 11px;
-    margin-top: 21%;
-}
-
-
-
-/* Signs Layout */
-.signs-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+    opacity: 1;
   }
-  
-  .twelve-signs {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-bottom: 59%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 4px;
-    color: white;
-  }
-  
-  .twelve-signs li {
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3.5px solid rgb(164 16 242);
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    padding: 25px 27px 22px 39px;
-    list-style-type: none;
-    cursor: pointer;
-    font-size: 33px;
-    font-weight: bold;
-    overflow: hidden;
-    text-align: center;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-
-  /* Cards */
-  .card-container {
-    gap: 50px;
-    width: 95%;
-    margin-left: 40px;
-    display: flex;
-  }
-
-  .card-content {
-    background: rgb(47, 46, 46);
-  }
-
-  .card-image {
-    width: 100%;
-    height: 82%;
-  }
-    /* .tarot-image {
-    width: 385px;
-    height: 470px;
-    } */
-
-/* FAQ Component */
-
-.faq-title {
-    color: beige;
-    margin-left: 39%;
-    margin-top: 5%;
-    font-size: 25px;
-}
-.faq-questions-container {
-    background-color: #ffcbf2;
-    margin-left: 30px;
-    margin-top: 28px;
-    width: 95%;
-    font-size: 20px;
-    border-radius: 20px;
-    /* margin-left: 30%; */
-  }
-.faq-accordion {
-    /* background-color: rgb(212, 177, 244); */
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
 }
 
-.faq-accordion:active, .faq-accordion:hover {
-    background-color: #7b2cbf;
+.crystalSpan {
+  display: none;
+  // opacity: 0;
+  gap: 5px;
 }
-
-.faq-accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 23px;
-  color: black;
-  float: right;
-  margin-left: 5px;
+.sign-crystal:hover + .crystalSpan{
+  display: flex;
+  opacity: 1;
 }
-
-.active:after {
-    content:'\2613'; /* Unicode character for "minus" sign (-) */
-    font-size: 23px;
-    color:black;
-    float: right;
-    margin-left: 5px;
-  }
-
-.panel {
-    padding: 7px 16px 10px 13px;
-    /* background-color: white; */
-    display: none;
-    overflow: hidden;
-    height: 50px;
-    color: #8923e9;
-    margin-left: 5px;
+.crystals-Aries {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -10em;
+  // opacity: 0;
 }
-
-.panel p {
-    padding: 7px;
+.crystals-Gemini {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;  // opacity: 0;
 }
-
-.faq-button {
-    background: rgb(234, 149, 190);
-    border-radius: 30px;
-    width: 21%;
-    margin-left: 37%;
-    margin-top: 19px
+.crystals-Taurus {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -7em;
 }
-
-/* Carousel CArds componenet */
-/* .carousel-container {
-    display: flex;
-    width: 80%;
-    gap: 35px;
-    margin-left: 40px;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: baseline;
-    position: relative;
-    overflow: hidden;
+.crystals-Cancer {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -11em;
 }
-
-.cards-wrapper {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
+.crystals-Leo {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -7em;
 }
-
-.carousel-card {
-    flex: 0 0 auto;
-    margin-right: 10px;
-    width: 100%;
-} */
-/* .carousel-content {
-    color: white;
-} */
-
-/* .carousel-image-container {
-    width: 100%;
-    height: 82%;
-} */
-
-
-/* .carousel-content .carousel-button {
-    border: 1px solid rgb(215, 215, 215);
-    border-radius: 30px;
-    padding: 9px;
-    background: transparent;
-    transition-duration: 0.3s;
-    visibility: hidden;
-} */
-/* .carousel-button {
-    visibility: visible;
-} */
-
-/* .carousel-content:hover .carousel-button { */
-    /* opacity: 1; Display on hover */
-    /* visibility: visible; Display on hover */
-/* } */
-
-/* .carousel-content .carousel-button:hover {
-    background-color: #b78ddf;
-    display:block;
-    color: white;
-} */
-/* #next, #prev {
-    color: white;
-} */
+.crystals-Virgo {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+}
+.crystals-Libra {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -8em;
+}
+.crystals-Scorpio {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -7em;
+}
+.crystals-Sagitarius {
+  color: white;
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+}
+.crystals-Capricorn{
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -11em;
+}
+.crystals-Aquarius {
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+  left: -7em;
+}
+.crystals-Pisces {
+  color: white;
+  color: white;
+  border: 3px solid pink;
+  border-radius: 50%;
+  width: 9vw;
+  height: 19vh;
+  top: 5px;
+  position: relative;
+}
 
 
 

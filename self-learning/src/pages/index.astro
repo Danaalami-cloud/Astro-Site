@@ -1,15 +1,13 @@
 ---
 
-// import Layout from '../layouts/Layout.astro';
-import Hero from "../layouts/Hero.astro";
 import MainProduct from "../components/MainProduct.astro";
 import LogosSlider from "../components/LogosSlider.astro";
-// import MainLayout from "../layouts/MainLayout.astro";
 import Universe from "../components/Universe.astro";
 import Footer from "../layouts/Footer.astro";
 import Nav from "../layouts/Nav.astro";
 import Hero from "../layouts/Hero.astro";
 import DailyHorescope from "../components/DailyHorescope";
+import CrystalsSigns from "../components/CrystalsSigns";
 import Cards from "../components/Cards.astro";
 import tarot from "../assets/tarot.png";
  import chart from "../assets/chart.png";
@@ -34,6 +32,7 @@ import "../styles/global.css";
     <Nav />
     <Hero />
     <DailyHorescope client:load />
+    <CrystalsSigns client:only/>
     <!-- <MainLayout /> -->
     <!-- <Cards 
 	cards={[
@@ -56,7 +55,7 @@ import "../styles/global.css";
 	/>
     <Universe /> -->
     <Footer />
-
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
     <script>
       import "../scripts/nav.js";
       import "../scripts/hero.js";
